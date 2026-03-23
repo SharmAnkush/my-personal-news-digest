@@ -2,7 +2,7 @@ import os
 from newsapi import NewsApiClient
 import anthropic
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # === CONFIGURE YOUR PREFERENCES HERE ===
 KEYWORDS = "AI, technology, science, business, Texas, Plano"  # Change to whatever you want (e.g. "sports, finance, health")
