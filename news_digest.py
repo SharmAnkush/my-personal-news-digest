@@ -5,7 +5,15 @@ import requests
 from datetime import datetime, timedelta
 
 # === CONFIGURE YOUR PREFERENCES HERE ===
-KEYWORDS = "AI, technology, science, business, Texas, Plano"  # Change to whatever you want (e.g. "sports, finance, health")
+KEYWORDS = (
+    "AI OR artificial intelligence OR LLM OR Grok OR Claude OR GPT "
+    "OR technology OR tech OR startup OR venture capital OR funding "
+    "OR Tesla OR xAI OR SpaceX OR OpenAI OR Anthropic OR Nvidia "
+    "OR electric vehicle OR EV OR autonomous OR robot OR Optimus "
+    "OR space OR rocket OR Starlink OR satellite "
+    "OR finance OR fintech OR stock OR investment OR economy "
+    "OR Texas OR Dallas OR Austin OR Plano"
+)
 COUNTRY = "us"  # or your preference
 
 # Load keys from GitHub Secrets
