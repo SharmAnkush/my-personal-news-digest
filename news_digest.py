@@ -44,14 +44,15 @@ for article in articles:
 prompt = f"""You are my personal news curator. I live in Plano, Texas and care about: {KEYWORDS}.
 
 Create a clean, daily personalized news feed from the articles below.
-- Only include articles that match my interests (ignore the rest).
-- For each relevant article: **Title** (bold), 2-3 sentence summary, source, and link.
-- Start with today's date and "Your Personalized Digest".
-- Use clean Markdown formatting.
-- Keep the whole digest under 2000 words.
+- Prioritize articles that clearly match my interests, but if few/no strong matches, include 4–8 of the most relevant/recent ones anyway (even loose connections like general US business/tech/economy, local Texas news, or science broadly).
+- Note at the top if you're including "slightly broader but potentially interesting" items.
+- For each: **Title** (bold), 2-3 sentence summary in your own words, source, and link.
+- Start with today's date (e.g. March 23, 2026) and "Good evening, Ankush! Here's your personalized digest".
+- Use clean Markdown formatting with line breaks.
+- Keep under 2000 words total.
 
 Articles:
-{news_text}
+{news_text if news_text else "No articles fetched today — check API key or try later."}
 """
 
 # Call Claude (use latest balanced model)
