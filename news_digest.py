@@ -16,13 +16,19 @@ CHAT_ID = os.getenv("CHAT_ID")
 
 # Fetch news
 newsapi = NewsApiClient(api_key=NEWSAPI_KEY)
+
+yesterday = (datetime.utcnow() - timedelta(days=1)).strftime("%Y-%m-%d")
+today = datetime.utcnow().strftime("%Y-%m-%d")
+
 articles_response = newsapi.get_everything(
     q=KEYWORDS,
     language="en",
     sort_by="publishedAt",
     page_size=20,
-    from_param=datetime.now().strftime("%Y-%m-%d")
+    from_param=yesterday,          # ← changed
+    to=today                       # optional, but explicit
 )
+
 
 articles = articles_response["articles"]
 
